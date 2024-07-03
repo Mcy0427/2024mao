@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人主頁面</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #F8BBD0;
+            margin-bottom: 60px; /* 預留 footer 的空間 */
+            transition: background-color 0.3s ease; /* 背景顏色過渡效果 */
+        }
+        .bg-lightpink {
+            background-color: #FFEBEE !important;
+        }
+        .bg-white {
+            background-color: #FFFFFF !important;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        .fade-in.in-view {
+            opacity: 1;
+        }
+        footer {
+            background-color: #FFEBEE;
+            color: #212121;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .deep-pink-text {
+            color: #C2185B !important; /* 深粉紅色 */
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #C2185B; /* 深粉紅色 */
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #AD1457; /* 淺粉紅色 */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-lightpink text-white text-center py-3">
+        <h1 class="deep-pink-text">個人主頁面</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">個人主頁面</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="inspiration.html">靈感分享區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">專業論壇</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="collaboration.html">合作平台</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="library.html">文章圖書館</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <section>
+            <h2 class="deep-pink-text">個人資料</h2>
+            <img src="下載 (1).png" alt="個人圖片" class="img-fluid mb-4 fade-in d-none">
+            <p class="deep-pink-text fade-in d-none">哈囉你好我是小心臟 歡迎跟我一起合作畫插畫!!。</p>
+        </section>
+        <section class="mt-4">
+            <h2 class="deep-pink-text">作品集</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card fade-in d-none">
+                        <img src="2404250264898171.jpg" class="card-img-top" alt="心花朵朵開針織袋">
+                        <div class="card-body">
+                            <h5 class="card-title">心花朵朵開針織袋</h5>
+                            <p class="card-text">附掛繩可以手提也可以側背。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card fade-in d-none">
+                        <img src="2312300218916862.jpg" class="card-img-top" alt="小心臟零錢包">
+                        <div class="card-body">
+                            <h5 class="card-title">小心臟零錢包</h5>
+                            <p class="card-text">尺寸 13 X 10 cm 附小釦環。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card fade-in d-none">
+                        <img src="2402050233939593.jpg" class="card-img-top" alt="小心臟卡套">
+                        <div class="card-body">
+                            <h5 class="card-title">小心臟卡套</h5>
+                            <p class="card-text">尺寸：12.5 X 8.5 cm ※ 附珠珠鏈。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 靈感共享平台</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 檢查元素是否在視口內的函數
+            function isInViewport(element) {
+                var rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // 滾動時按順序淡入元素，並帶有延遲
+            $(window).on('scroll', function() {
+                // 變換背景顏色
+                var scrollPos = $(window).scrollTop();
+                if (scrollPos > 100) {
+                    $('body').removeClass('bg-lightpink').addClass('bg-white');
+                } else {
+                    $('body').removeClass('bg-white').addClass('bg-lightpink');
+                }
+
+                // 檢查淡入效果
+                $('.fade-in').each(function(index) {
+                    if (isInViewport(this) && !$(this).hasClass('in-view')) {
+                        $(this).addClass('in-view').css('transition-delay', index * 0.2 + 's').removeClass('d-none');
+                    }
+                });
+            });
+
+            // 頁面加載時檢查，以確保已在視口內的元素立即顯示
+            $(window).trigger('scroll');
+        });
+    </script>
+</body>
+</html>

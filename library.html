@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章圖書館</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #E0F7FA;
+        }
+        .bg-lightblue {
+            background-color: #03A9F4 !important;
+        }
+        .article-item {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .article-item:hover {
+            transform: scale(1.02);
+        }
+        .article-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: absolute;
+            z-index: 1000;
+            width: 80%;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .article-item:hover .article-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(-50%) scale(1);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-lightblue text-white text-center py-3">
+        <h1>文章圖書館</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile.html">個人主頁面</a></li>
+                <li class="nav-item"><a class="nav-link" href="inspiration.html">靈感分享區</a></li>
+                <li class="nav-item"><a class="nav-link" href="forum.html">專業論壇</a></li>
+                <li class="nav-item"><a class="nav-link" href="collaboration.html">合作平台</a></li>
+                <li class="nav-item"><a class="nav-link" href="library.html">文章圖書館</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <section>
+            <h2>創意相關文章</h2>
+            <div id="creative-articles" class="list-group">
+                <div class="article-item list-group-item list-group-item-action">
+                    <h5 class="mb-1">「創意的力量：如何激發和保持創意思維」</h5>
+                    <p class="mb-1">本文探討了創意思維在個人和團隊中的重要性，以及如何通過各種方法和技巧來激發和保持創意。我們將探索創意的定義，分析創意思維的障礙，並提供實用的建議和案例研究，以幫助讀者在日常生活和工作中發揮更大的創造力。</p>
+                    <div class="article-content">
+                        <p>我們重新界定了創意的概念，不僅局限於藝術和設計，而是涵蓋了在各種領域中革新和解決問題的能力。然後，我們分析了一些常見的創意思維障礙，例如固有的思維框架和外部環境的影響。透過深入研究案例和實用的建議，我們提供了有效激發和保持創意的方法和技巧，這些方法不僅適用於日常生活，也適用於職場環境。
+
+以案例研究為例，我們可以探討某些成功企業如何通過創新的思維方式在競爭激烈的市場中脫穎而出。此外，我們可以討論個人如何利用特定的創意技巧，如腦力激盪會議或視覺化工具，來增強他們的創造力表現。
+
+這些內容將幫助讀者更好地理解創意思維的重要性，並為他們提供實際應用的指導，以在各自的領域中更具創意地思考和行動。。</p>
+                        <p>作者：毛毛</p>
+                        <p>發布日期：2024年7月1日</p>
+                    </div>
+                </div>
+                <div class="article-item list-group-item list-group-item-action">
+                    <h5 class="mb-1">「創意與科技的融合：未來趨勢與挑戰」</h5>
+                    <p class="mb-1">這篇文章討論了創意與科技融合的趨勢，探索了這一融合如何重塑產品設計、藝術創作以及市場營銷等領域。我們將分析人工智能、虛擬現實等先進技術如何影響創意產業，並探討在這些新技術背景下面臨的挑戰和機遇。</p>
+                    <div class="article-content">
+                        <p>本文深入探討了創意與科技融合的新趨勢，特別是人工智能、虛擬現實和其他先進技術如何在產品設計、藝術創作和市場營銷等領域中發揮重要作用。人工智能的普及使得設計過程更加自動化和智能化，從而加速了產品開發週期並提高了設計的準確性和個性化。虛擬現實技術則為藝術家和設計師提供了全新的創作空間，使他們能夠以前所未有的方式與觀眾互動和體驗作品。
+
+然而，這種融合也帶來了一些挑戰。例如，技術的快速變革可能使得一些傳統的創意工作者感到挑戰重重，需要不斷學習和適應新技能和工具。此外，隨著數據隱私和智慧財產權問題日益突出，如何在這些新技術的框架下有效保護創意成果也成為了一個重要的議題。
+
+儘管面臨這些挑戰，創意與科技融合也帶來了巨大的機遇。新技術不僅擴展了創作的可能性，還為創意產業帶來了全球化的市場和更廣泛的觀眾。這些機遇不僅推動了創意產業的增長，還激勵了跨領域的合作和創新，使得創意和科技的結合成為當今和未來的重要發展方向。
+
+透過對這些趨勢和影響的深入分析，本文旨在幫助讀者更好地理解創意產業在科技變革中的角色和機遇，並探索如何在這個動態變化的環境中取得成功。</p>
+                        <p>作者：毛毛</p>
+                        <p>發布日期：2024年7月2日</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-4">
+            <h2>創意教程</h2>
+            <div id="creative-tutorials" class="list-group">
+                <div class="article-item list-group-item list-group-item-action">
+                    <h5 class="mb-1">手工製作個性化文具：DIY創意筆記本</h5>
+                    <p class="mb-1">這篇教程將教你如何利用簡單的材料和創意技巧，手工製作一本個性化的筆記本。從選擇封面材料到內頁設計，我們將一步步引導你完成這個有趣的DIY項目。無論是作為禮物還是個人使用，這個創意筆記本將展示你的獨特風格和製作技能。</p>
+                    <div class="article-content">
+                        <p>這篇教程將詳細介紹如何用簡單的材料和創意技巧製作一本個性化的筆記本。首先，我們將探討如何選擇適合的封面材料，這可以是色彩豐富的布料、皮革或者甚至是回收的紙張。每種材料都能帶來獨特的風格和觸感，讓你的筆記本與眾不同。
+
+接著，我們將逐步引導你完成內頁的設計。這包括選擇合適的紙張或格子紙，決定內頁的排版和組織方式，以確保筆記本既美觀又實用。我們還會分享一些技巧，如如何剪裁和裝訂內頁，使其看起來整齊有序。
+
+在製作過程中，你可能會遇到一些挑戰，比如如何處理封面材料的折痕或者如何確保內頁不會松散。我們將提供實用的解決方案和技巧，幫助你克服這些問題，保證最終產品的質量和耐用性。
+
+不管你是打算把這個筆記本作為禮物送給朋友，還是為自己打造一個獨特的工作伴侶，這個DIY項目都將展示你的個性和手工藝技能。透過這篇教程，我們希望激發你的創造力，讓你享受手工製作的樂趣，並得到一個既實用又具有個人風格的筆記本。</p>
+                        <p>作者：毛毛</p>
+                        <p>發布日期：2024年7月3日</p>
+                    </div>
+                </div>
+                <div class="article-item list-group-item list-group-item-action">
+                    <h5 class="mb-1">影像後製神器：Photoshop基礎入門指南</h5>
+                    <p class="mb-1">這篇入門指南將介紹你進入Photoshop世界的基本技能和工具。從圖片修復到創意合成，你將學會如何使用Photoshop來增強和轉化你的影像創作。無論你是新手還是有一定經驗，這些基礎技能將為你的設計和攝影工作提供實用的工具和技巧。</p>
+                    <div class="article-content">
+                        <p>這篇入門指南將全面介紹你進入Photoshop世界的基本技能和工具。首先，我們將深入探討圖片修復的技巧，這包括如何去除瑕疵、修復老舊照片，甚至是恢復損壞的影像部分。這些技能對於保存和修復珍貴的照片非常寶貴，同時也能提升你的修圖能力。
+
+接著，我們將進入創意合成的領域，教你如何利用圖層合成、選擇工具和遮罩來創建令人驚嘆的影像合成作品。這些技術不僅適用於設計項目，還可以應用於藝術創作和廣告攝影等領域，讓你能夠將不同元素無縫結合，創造出令人眼前一亮的作品。
+
+無論你是一位新手，還是已經有一定Photoshop經驗的用戶，這些基礎技能都將為你的設計和攝影工作提供實用的工具和技巧。我們將通過具體的示例和練習來幫助你理解和應用這些技能，讓你能夠在Photoshop中更自如地表達創意，並將你的影像創作推向新的高度。
+
+
+
+
+
+
+</p>
+                        <p>作者：毛毛</p>
+                        <p>發布日期：2024年7月4日</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-lightblue text-white text-center py-3 mt-4">
+        <p>&copy; 2024 靈感共享平台</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

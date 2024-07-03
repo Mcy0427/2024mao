@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>靈感共享平台</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #E0F7FA;
+            padding-bottom: 100px; /* 為了讓 footer 不擋住內容而添加的底部填充 */
+        }
+        .bg-lightblue {
+            background-color: #03A9F4 !important;
+        }
+        .navbar .nav-item {
+            margin-right: 10px;
+        }
+        .img-fluid {
+            transition: transform 0.3s ease; /* 添加過渡效果 */
+        }
+        .img-fluid:hover {
+            transform: scale(1.1); /* 懸停時放大到 1.1 倍 */
+        }
+        .explore-card {
+            transition: transform 0.3s ease; /* 添加過渡效果 */
+        }
+        .explore-card:hover {
+            transform: scale(1.1); /* 懸停時放大到 1.1 倍 */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-lightblue text-white text-center py-3">
+        <h1>靈感共享平台</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown" id="navbarDropdownHomeLi">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHome" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                        首頁
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownHome">
+                        <a class="dropdown-item" href="#" onclick="scrollToSection('introduction')">簡介和平台特色</a>
+                        <a class="dropdown-item" href="#" onclick="scrollToSection('hot-ideas')">熱門靈感分享</a>
+                        <a class="dropdown-item" href="#" onclick="scrollToSection('explore')">探索功能入口</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">個人主頁面</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="inspiration.html">靈感分享區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">專業論壇</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="collaboration.html">合作平台</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="library.html">文章圖書館</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">聯絡我們</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">了解更多</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <section id="introduction">
+            <h2>簡介和平台特色</h2>
+            <p>靈感共享是一個跨領域的創意交流平台，讓不同領域的創作者和專家能夠分享他們的靈感、想法和專業知識。不同領域的思維交匯時，可能會出現更多的創新。</p>
+        </section>
+        <section id="hot-ideas" class="mt-4">
+            <h2>熱門靈感分享</h2>
+            <div class="list-group">
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="12039-2020010734757053.jpg" class="img-fluid" alt="熱門靈感圖片">
+                        </div>
+                        <div class="col-md-8">
+                            <h5 class="mb-1">《wall.fbx》</h5>
+                            <p class="mb-1">引用異質的實體物件，擾動動畫敘事、影像的單一質地，時間性、定格的凝視等視覺感官，也巧妙在一個介質上被並置</p>
+                            <small>李亦凡</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- 可以根據需要重複這個模塊來添加更多靈感 -->
+            </div>
+        </section>
+        <section id="explore" class="mt-4">
+            <h2>探索功能入口</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card explore-card">
+                        <div class="card-body">
+                            <h5 class="card-title">個人主頁面</h5>
+                            <p class="card-text">展示你的個人資料和作品。</p>
+                            <a href="profile.html" class="btn btn-primary">進入</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card explore-card">
+                        <div class="card-body">
+                            <h5 class="card-title">靈感分享區</h5>
+                            <p class="card-text">分享和發現新的靈感。</p>
+                            <a href="inspiration.html" class="btn btn-primary">進入</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card explore-card">
+                        <div class="card-body">
+                            <h5 class="card-title">專業論壇</h5>
+                            <p class="card-text">參與專業討論和交流。</p>
+                            <a href="forum.html" class="btn btn-primary">進入</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card explore-card">
+                        <div class="card-body">
+                            <h5 class="card-title">合作平台</h5>
+                            <p class="card-text">尋找合作夥伴和發佈專案。</p>
+                            <a href="collaboration.html" class="btn btn-primary">進入</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card explore-card">
+                        <div class="card-body">
+                            <h5 class="card-title">文章圖書館</h5>
+                            <p class="card-text">查找各種創意相關的文章和教程。</p>
+                            <a href="library.html" class="btn btn-primary">進入</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // 啟用 Bootstrap 的下拉式選單功能
+        $(document).ready(function() {
+            $('.dropdown-toggle').dropdown();
+        });
+
+        // 滾動到指定區域的函數
+        function scrollToSection(sectionId) {
+            $('html, body').animate({
+                scrollTop: $('#' + sectionId).offset().top
+            }, 800);
+        }
+
+        // 鼠標懸停在首頁按鍵上時顯示下拉式選單
+        $('#navbarDropdownHomeLi').mouseover(function() {
+            if (!$(this).hasClass('show')) {
+                $(this).addClass('show');
+                $('#navbarDropdownHome').attr('aria-expanded', 'true');
+                $('.dropdown-menu').addClass('show');
+            }
+        });
+
+        // 當鼠標離開時，隱藏下拉式選單
+        $('#navbarDropdownHomeLi').mouseleave(function() {
+            if ($(this).hasClass('show')) {
+                $(this).removeClass('show');
+                $('#navbarDropdownHome').attr('aria-expanded', 'false');
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+
+        // 點擊下拉式選項時自動收起下拉式選單並滾動到對應區域
+        $('.dropdown-item').click(function(e) {
+            e.preventDefault(); // 防止默認行為（如跳轉）
+            var targetSection = $(this).attr('href').substring(1); // 獲取目標區域的 ID
+            scrollToSection(targetSection); // 滾動到目標區域
+            $('.dropdown-menu').removeClass('show'); // 收起下拉式選單
+            $('#navbarDropdownHome').attr('aria-expanded', 'false'); // 將下拉式選單標記為未展開狀態
+            $('#navbarDropdownHomeLi').removeClass('show'); // 移除下拉式選單的展開標記
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>靈感共享平台</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #E0F7FA;
+        }
+        .bg-lightblue {
+            background-color: #03A9F4 !important;
+        }
+        .navbar .nav-item {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-lightblue text-white text-center py-3">
+        <h1>靈感共享平台</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">個人主頁面</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="inspiration.html">靈感分享區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">專業論壇</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="collaboration.html">合作平台</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="library.html">文章圖書館</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <section>
+            <h2>發布新靈感</h2>
+            <form id="share-idea-form">
+                <div class="form-group">
+                    <label for="idea-title">靈感標題</label>
+                    <input type="text" class="form-control" id="idea-title" placeholder="輸入靈感標題">
+                </div>
+                <div class="form-group">
+                    <label for="idea-description">靈感描述</label>
+                    <textarea class="form-control" id="idea-description" rows="3" placeholder="輸入靈感描述"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">發布</button>
+            </form>
+        </section>
+        <section class="mt-4">
+            <h2>熱門靈感分享</h2>
+            <div id="hot-ideas" class="list-group">
+                <!-- 熱門靈感分享將由JavaScript動態加載 -->
+            </div>
+        </section>
+    </main>
+    <footer class="bg-lightblue text-white text-center py-3 mt-4">
+        <p>&copy; 2024 靈感共享平台</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

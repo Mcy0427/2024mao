@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專業論壇</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-color: #E0F7FA;
+        }
+        .bg-lightblue {
+            background-color: #03A9F4 !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-lightblue text-white text-center py-3">
+        <h1>專業論壇</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile.html">個人主頁面</a></li>
+                <li class="nav-item"><a class="nav-link" href="inspiration.html">靈感分享區</a></li>
+                <li class="nav-item"><a class="nav-link" href="forum.html">專業論壇</a></li>
+                <li class="nav-item"><a class="nav-link" href="collaboration.html">合作平台</a></li>
+                <li class="nav-item"><a class="nav-link" href="library.html">文章圖書館</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <section>
+            <h2>論壇主題</h2>
+            <div id="forum-topics" class="list-group">
+                <!-- 論壇主題將由JavaScript動態加載 -->
+            </div>
+        </section>
+        <section class="mt-4">
+            <h2>主題內的帖子</h2>
+            <div id="topic-posts" class="list-group">
+                <!-- 主題內的帖子將由JavaScript動態加載 -->
+            </div>
+        </section>
+        <section class="mt-4">
+            <h2>發表新帖</h2>
+            <form id="new-post-form">
+                <div class="form-group">
+                    <label for="post-title">帖子標題</label>
+                    <input type="text" class="form-control" id="post-title" placeholder="輸入標題">
+                </div>
+                <div class="form-group">
+                    <label for="post-content">作品內容</label>
+                    <textarea class="form-control" id="post-content" rows="3" placeholder="輸入內容"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="post-image">上傳圖片</label>
+                    <input type="file" class="form-control" id="post-image">
+                </div>
+                <button type="submit" class="btn btn-primary">發表</button>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-lightblue text-white text-center py-3 mt-4">
+        <p>&copy; 2024 靈感共享平台</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 模擬論壇主題數據
+            var topics = [
+                { id: 1, title: "名片" },
+                { id: 2, title: "LOGO" },
+                { id: 3, title: "主視覺" }
+            ];
+
+            // 動態加載論壇主題
+            topics.forEach(function(topic) {
+                $('#forum-topics').append('<a href="#" class="list-group-item list-group-item-action" data-topic-id="' + topic.id + '">' + topic.title + '</a>');
+            });
+
+            // 模擬帖子數據
+            var posts = {
+                1: [
+                    { title: "名片案例1", content: "這是名片的案例1", image: "image1.jpg" },
+                    { title: "名片案例2", content: "這是名片的案例2", image: "下載.jpg" }
+                ],
+                2: [
+                    { title: "LOGO案例1", content: "這是LOGO的案例1", image: "0321-cover.webp" },
+                    { title: "LOGO案例2", content: "這是LOGO的案例2", image: "Mountain-logo-Design-Graphics-9785421-1-1-580x435.png" }
+                ],
+                3: [
+                    { title: "主視覺案例1", content: "這是主視覺的案例1", image: "下載 (1).jpg" },
+                    { title: "主視覺案例2", content: "這是主視覺的案例2", image: "下載.png" }
+                ]
+            };
+
+            // 加載指定主題的帖子
+            function loadPosts(topicId) {
+                $('#topic-posts').empty();
+                posts[topicId].forEach(function(post) {
+                    $('#topic-posts').append(
+                        '<div class="list-group-item">' +
+                        '<h5>' + post.title + '</h5>' +
+                        '<p>' + post.content + '</p>' +
+                        '<img src="' + post.image + '" class="img-fluid" alt="Post Image">' +
+                        '</div>'
+                    );
+                });
+            }
+
+            // 鼠標懸停時加載帖子
+            $('#forum-topics').on('mouseenter', '.list-group-item', function() {
+                var topicId = $(this).data('topic-id');
+                loadPosts(topicId);
+            });
+
+            // 發表新作品
+            $('#new-post-form').submit(function(event) {
+                event.preventDefault();
+                var title = $('#post-title').val();
+                var content = $('#post-content').val();
+                var imageFile = $('#post-image')[0].files[0];
+                if (title && content && imageFile) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#topic-posts').append(
+                            '<div class="list-group-item">' +
+                            '<h5>' + title + '</h5>' +
+                            '<p>' + content + '</p>' +
+                            '<img src="' + e.target.result + '" class="img-fluid" alt="Post Image">' +
+                            '</div>'
+                        );
+                        $('#post-title').val('');
+                        $('#post-content').val('');
+                        $('#post-image').val('');
+                    };
+                    reader.readAsDataURL(imageFile);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
